@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support – SapSap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B35;
+      --orange-dark: #e85a24;
+      --dark: #111111;
+      --mid: #444444;
+      --light: #888888;
+      --border: #e8e8e8;
+      --bg: #ffffff;
+      --section-bg: #f9f8f6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ──────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 64px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 0 32px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--dark);
+    }
+
+    .nav-logo svg {
+      width: 72px;
+      height: 72px;
+      color: var(--dark);
+    }
+
+    .nav-logo-text {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--mid);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--dark);
+      background: rgba(0,0,0,0.04);
+    }
+
+    .nav-cta {
+      background: var(--orange) !important;
+      color: #fff !important;
+      border-radius: 20px !important;
+      padding: 8px 20px !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      transition: background 0.2s, transform 0.1s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange-dark) !important;
+      transform: translateY(-1px);
+    }
+
+    /* ─── HERO ─────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      background: #1a1a1a; /* dark fallback if image fails to load */
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      filter: brightness(0.38) saturate(0.7);
+      transform: scale(1.02);
+      display: block;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      width: 100%;
+      padding: 0 48px;
+      margin: 64px auto 0;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 6px 14px;
+      margin-bottom: 28px;
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--orange);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.06;
+      letter-spacing: -2px;
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(255,107,53,0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(255,107,53,0.5);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: background 0.2s, transform 0.15s;
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 48px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.45);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll-line {
+      width: 32px;
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* ─── STEPS ────────────────────────────────────── */
+    /* ─── STEPS ────────────────────────────────────── */
+    .steps {
+      background: var(--bg);
+      padding: 120px 48px 120px;
+    }
+
+    .steps-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .steps-header h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: var(--dark);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .step-text {
+      flex: 1;
+      max-width: 130px;
+    }
+
+    .step-title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .step-num {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .step-text h3 {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .step-text p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--light);
+    }
+
+    .step-phone {
+      flex-shrink: 0;
+      width: 160px;
+    }
+
+    .phone-frame {
+      width: 160px;
+    }
+
+    .phone-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+        /* ─── SOCIAL PROOF ──────────────────────────────── */
+    .social-proof {
+      background: var(--section-bg);
+      padding: 80px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .social-proof-stat {
+      text-align: center;
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .social-proof-stat .stat-number {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .social-proof-stat .stat-number em {
+      color: var(--orange);
+      font-style: normal;
+    }
+
+    .social-proof-stat p {
+      font-size: 14px;
+      color: var(--light);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .social-proof-divider {
+      width: 1px;
+      height: 60px;
+      background: var(--border);
+    }
+
+    /* ─── MANIFESTO ────────────────────────────────── */
+    .manifesto {
+      padding: 60px 48px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .manifesto h2 {
+      font-size: clamp(28px, 4.5vw, 58px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1.12;
+      color: var(--dark);
+      margin-bottom: 32px;
+    }
+
+    .manifesto h2 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .manifesto p {
+      font-size: 18px;
+      color: var(--light);
+      line-height: 1.75;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+
+    /* ─── TESTIMONIALS ──────────────────────────────── */
+    .testimonials {
+      background: var(--section-bg);
+      padding: 100px 48px;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .testimonials-header h2 {
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--dark);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+    }
+
+    .star { color: #fbbf24; font-size: 14px; }
+
+    .testimonial-card blockquote {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--mid);
+      font-style: normal;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .author-info strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .author-info span {
+      font-size: 12px;
+      color: var(--light);
+    }
+
+    /* ─── CTA BAND ─────────────────────────────────── */
+    .cta-band {
+      background: var(--dark);
+      padding: 100px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-band h2 {
+      font-size: clamp(32px, 5vw, 64px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: #fff;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .cta-band h2 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .cta-band p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .cta-band-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--dark);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,255,255,0.2);
+    }
+
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-2px);
+    }
+
+    /* ─── FOOTER ───────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 60px 48px 40px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+
+    .footer-brand .nav-logo { margin-bottom: 16px; }
+    .footer-brand .nav-logo svg { color: #fff; }
+    .footer-brand .nav-logo-text { color: #fff; }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      max-width: 220px;
+    }
+
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .footer-col ul li a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      font-weight: 450;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: #fff; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-legal a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ─── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 0 24px; }
+      .steps { padding: 72px 24px; }
+      .steps-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .social-proof { flex-direction: column; align-items: center; padding: 60px 24px; }
+      .social-proof-divider { width: 60px; height: 1px; }
+      .manifesto { padding: 80px 24px; }
+      .testimonials { padding: 72px 24px; }
+      .testimonials-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .cta-band { padding: 72px 24px; }
+      footer { padding: 48px 24px 32px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+      .hero-scroll { left: 24px; }
+    }
+
+    /* ─── VERY NARROW (preview panes, ~400-500px) ─────── */
+    @media (max-width: 520px) {
+      nav {
+        height: 56px;
+      }
+      .nav-inner { padding: 0 16px; }
+      .nav-logo svg { width: 40px; height: 40px; }
+      .nav-cta { padding: 6px 14px !important; font-size: 13px !important; }
+
+      .hero { min-height: 100svh; }
+      .hero-content { padding: 0 16px; margin-top: 56px; }
+      .hero-eyebrow { font-size: 11px; padding: 5px 12px; margin-bottom: 20px; }
+      .hero h1 { font-size: 34px; letter-spacing: -1px; margin-bottom: 16px; }
+      .hero p { font-size: 15px; margin-bottom: 28px; }
+      .btn-primary, .btn-secondary { font-size: 14px; padding: 12px 22px; }
+      .hero-scroll { display: none; }
+
+      .steps { padding: 56px 16px; }
+      .steps-header { margin-bottom: 40px; }
+      .steps-header h2 { font-size: 28px; letter-spacing: -0.5px; }
+      .step-card h3 { font-size: 19px; }
+
+      .social-proof { padding: 48px 16px; gap: 32px; }
+      .social-proof-stat .stat-number { font-size: 40px; }
+
+      .manifesto { padding: 64px 16px; }
+      .manifesto h2 { letter-spacing: -1px; }
+      .manifesto p { font-size: 16px; }
+
+      .testimonials { padding: 56px 16px; }
+      .testimonials-header h2 { font-size: 26px; }
+
+      .cta-band { padding: 64px 16px; }
+      .cta-band h2 { letter-spacing: -1px; }
+      .cta-band p { font-size: 16px; }
+
+      footer { padding: 40px 16px 28px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-brand { grid-column: auto; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ─── FLOATING COUNTER PILL ─────────────────────── */
+    .counter-pill {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 200;
+      background: rgba(20, 20, 20, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 999px;
+      padding: 10px 22px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      white-space: nowrap;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    .counter-pill-number {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .counter-pill-label {
+      font-size: 14px;
+      font-weight: 450;
+      color: rgba(255,255,255,0.55);
+    }
+
+  </style>
+  <style>
+    .subpage-hero {
+      padding: 140px 48px 64px;
+      text-align: center;
+      background: var(--section-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .subpage-hero h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .subpage-hero p {
+      font-size: 18px;
+      color: var(--light);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+    .support-search {
+      display: flex;
+      align-items: center;
+      max-width: 480px;
+      margin: 32px auto 0;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 30px;
+      padding: 12px 20px;
+      gap: 10px;
+    }
+    .support-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: transparent;
+    }
+    .support-search input::placeholder { color: var(--light); }
+    .support-search-icon { color: var(--light); font-size: 16px; }
+
+    .support-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 48px;
+    }
+    .support-topics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 72px;
+    }
+    .topic-card {
+      background: var(--section-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .topic-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+    }
+    .topic-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .topic-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .topic-card p {
+      font-size: 13px;
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    .faq-section h2 {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      color: var(--dark);
+      margin-bottom: 32px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q::after {
+      content: '+';
+      color: var(--orange);
+      font-size: 22px;
+      font-weight: 400;
+      flex-shrink: 0;
+    }
+    .faq-a {
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    .contact-band {
+      background: var(--dark);
+      padding: 80px 48px;
+      text-align: center;
+    }
+    .contact-band h2 {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    .contact-band p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 700px) {
+      .subpage-hero { padding: 120px 24px 48px; }
+      .support-body { padding: 48px 24px; }
+      .support-topics { grid-template-columns: 1fr; }
+      .contact-band { padding: 64px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <g transform="translate(0,1024) scale(0.1,-0.1)">
+          <path d="M3890 8413 c-171 -22 -378 -86 -524 -161 -661 -340 -805 -1118 -302 -1626 44 -45 149 -138 231 -207 235 -194 302 -272 360 -416 118 -291 -7 -669 -281 -853 -108 -72 -216 -104 -332 -98 -59 3 -102 11 -134 25 -195 88 -255 340 -139 588 67 144 218 303 368 387 29 16 53 33 53 37 0 11 -51 56 -95 83 -101 62 -238 81 -375 54 -168 -34 -306 -112 -432 -244 -302 -317 -312 -785 -21 -1052 175 -160 465 -237 794 -210 63 5 144 15 180 21 l67 12 36 77 c60 129 132 229 245 340 159 158 314 253 536 329 l110 37 34 84 c81 203 93 419 32 600 -77 228 -200 379 -519 633 -193 154 -261 219 -306 291 -130 206 -137 451 -19 666 55 99 179 217 284 269 205 101 418 88 497 -32 24 -37 27 -50 27 -131 0 -82 -3 -98 -32 -159 -18 -37 -55 -92 -84 -122 -103 -109 -217 -158 -358 -154 -98 4 -99 3 -100 -96 -2 -158 124 -268 304 -268 358 0 713 371 732 763 13 265 -109 430 -377 512 -52 16 -100 21 -245 23 -99 2 -196 1 -215 -2z"/>
+          <path d="M7581 7864 c-97 -26 -170 -73 -278 -179 l-101 -100 -20 48 c-31 73 -59 82 -262 82 -227 0 -216 5 -223 -102 -13 -177 -72 -447 -152 -687 -122 -371 -286 -615 -425 -633 -60 -8 -80 19 -80 110 0 155 81 417 266 864 93 223 94 230 32 276 -54 40 -100 50 -212 44 -185 -10 -225 -34 -293 -175 0 -2 -21 12 -47 31 -70 54 -134 72 -251 71 -117 -1 -199 -25 -320 -95 -285 -163 -560 -554 -651 -924 -69 -283 -50 -526 51 -658 133 -174 423 -195 649 -48 70 46 177 152 221 219 l29 44 11 -44 c18 -73 80 -144 150 -174 54 -23 182 -23 260 0 84 25 143 57 239 131 47 35 83 59 81 52 -2 -6 -27 -84 -56 -172 -48 -146 -53 -168 -53 -255 -1 -87 1 -99 27 -143 47 -79 135 -124 263 -134 39 -3 96 -3 127 1 l56 7 5 42 c2 23 9 83 15 132 6 50 27 155 46 234 37 150 124 463 131 470 2 2 25 -17 51 -43 172 -170 462 -163 718 19 83 59 218 203 286 305 110 165 201 382 244 580 26 119 31 300 11 401 -21 104 -81 233 -137 293 -93 102 -265 149 -408 110z m-32 -369 c52 -45 64 -96 58 -247 -12 -309 -161 -634 -359 -783 -151 -113 -284 -87 -296 60 -8 94 136 595 202 703 48 79 158 213 200 245 71 55 145 63 195 22z m-1891 -271 c78 -55 70 -198 -30 -501 -97 -296 -215 -491 -342 -563 -63 -37 -130 -40 -169 -10 -114 90 -22 520 176 824 68 104 175 218 230 245 50 25 104 27 135 5z"/>
+          <path d="M4355 5375 c-438 -70 -799 -360 -917 -735 -20 -65 -23 -95 -23 -230 0 -175 17 -254 79 -378 71 -141 149 -227 371 -411 83 -69 178 -153 212 -189 181 -188 213 -449 87 -708 -102 -208 -285 -335 -489 -337 -62 0 -91 4 -130 22 -176 78 -219 280 -110 516 58 127 190 274 309 346 32 20 55 40 53 49 -4 25 -86 79 -153 100 -81 24 -213 27 -299 5 -354 -90 -605 -485 -531 -835 55 -261 257 -436 573 -496 129 -24 361 -15 501 20 540 136 932 582 932 1061 0 141 -23 236 -89 370 -86 173 -204 302 -473 517 -80 65 -165 139 -187 165 -84 97 -128 231 -118 358 26 301 293 565 572 565 82 0 125 -12 174 -48 121 -90 57 -348 -117 -472 -77 -56 -167 -82 -262 -78 l-75 3 -9 -42 c-12 -59 0 -123 34 -176 103 -163 391 -145 614 39 87 72 147 149 202 259 149 300 94 566 -139 680 -40 19 -99 42 -132 51 -85 23 -343 28 -460 9z"/>
+          <path d="M7758 5081 c-97 -32 -159 -78 -269 -198 l-56 -61 -16 37 c-30 68 -58 76 -258 76 -126 0 -180 -4 -191 -13 -10 -8 -17 -40 -22 -97 -27 -353 -209 -901 -368 -1109 -98 -127 -207 -175 -243 -106 -44 85 22 341 207 805 l100 250 -19 35 c-30 58 -78 75 -208 75 -102 0 -114 -2 -170 -30 -52 -26 -64 -38 -90 -86 l-30 -57 -35 29 c-86 72 -250 91 -383 45 -151 -54 -325 -195 -461 -376 -203 -270 -316 -579 -316 -864 0 -220 60 -335 210 -405 49 -23 67 -26 160 -25 115 1 188 22 285 82 62 38 177 152 217 215 l31 49 13 -37 c20 -60 61 -112 110 -141 38 -23 63 -29 130 -32 135 -7 265 44 395 157 35 30 50 38 46 25 -3 -10 -9 -32 -13 -49 -4 -16 -31 -97 -61 -178 -105 -290 -125 -435 -74 -540 28 -57 91 -107 166 -132 63 -21 179 -30 225 -18 l35 9 7 85 c17 194 42 311 155 720 l76 277 51 -42 c75 -61 146 -88 243 -94 355 -20 715 303 886 794 60 172 80 281 80 434 0 118 -3 145 -25 212 -65 198 -177 287 -368 294 -74 3 -108 0 -152 -15z m2 -349 c52 -52 63 -155 35 -318 -43 -245 -163 -486 -309 -621 -144 -133 -277 -136 -305 -5 -8 41 -5 64 24 177 18 71 58 207 89 300 59 181 97 249 208 378 99 115 198 149 258 89z m-1787 -312 c56 -44 59 -140 11 -325 -96 -371 -255 -634 -410 -681 -57 -17 -87 -10 -118 27 -36 42 -42 106 -23 223 32 186 112 385 222 551 125 187 243 263 318 205z"/>
+        </g>
+      </svg>
+      <span class="nav-logo-text">SapSap</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#">Your story</a></li>
+      <li><a href="#">Use cases</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Earn Money</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="#" class="nav-cta">Try for free →</a></li>
+    </ul>
+    </div>
+  </nav>
+
+  <div class="subpage-hero">
+    <h1>How can we help?</h1>
+    <p>Find answers, get in touch with us, or browse guides for everything SapSap.</p>
+    <div class="support-search">
+      <span class="support-search-icon">🔍</span>
+      <input type="text" placeholder="Search for answers…" />
+    </div>
+  </div>
+
+  <div class="support-body">
+
+    <div class="support-topics">
+      <div class="topic-card">
+        <span class="topic-icon">🚀</span>
+        <h3>Getting started</h3>
+        <p>Set up your account, choose your language, and snap your first photo.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">👤</span>
+        <h3>Account & profile</h3>
+        <p>Manage your username, profile photo, password, and linked accounts.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">📸</span>
+        <h3>Snapping & learning</h3>
+        <p>How the camera feature works, AI recognition, and vocabulary lessons.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">🌍</span>
+        <h3>Languages & content</h3>
+        <p>Supported languages, switching between them, and managing your word library.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">❤️</span>
+        <h3>Community & sharing</h3>
+        <p>Posting vocabulary cards, following other learners, and feed settings.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">🔒</span>
+        <h3>Privacy & safety</h3>
+        <p>Controlling who sees your posts, blocking users, and reporting content.</p>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">What languages does SapSap support?</div>
+        <div class="faq-a">SapSap currently supports over 40 languages including Spanish, French, German, Japanese, Korean, Mandarin, Portuguese, Italian, Arabic, and many more. We regularly add new languages — check the app for the latest list.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does the Snap feature work?</div>
+        <div class="faq-a">Open SapSap and point your camera at any object, sign, or scene around you. Our AI identifies what it sees and instantly shows you the vocabulary in your target language, along with pronunciation and example sentences.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is SapSap free to use?</div>
+        <div class="faq-a">SapSap has a free tier that gives you access to core features including snapping, basic vocabulary lessons, and community sharing. A premium subscription unlocks unlimited snaps, advanced lessons, offline mode, and more.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can I learn more than one language at a time?</div>
+        <div class="faq-a">Yes! You can switch between languages at any time from your profile settings. Your vocabulary library and progress are saved separately for each language.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I delete a post or vocabulary card I've shared?</div>
+        <div class="faq-a">Tap the three-dot menu (⋯) on any post in your profile or feed, then select "Delete". The post will be removed immediately from your profile and from the feeds of everyone who follows you.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I report inappropriate content?</div>
+        <div class="faq-a">Tap the three-dot menu (⋯) on any post or profile you'd like to report, then select "Report". Choose a reason and submit. Our moderation team reviews all reports within 24 hours.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">I forgot my password — what do I do?</div>
+        <div class="faq-a">On the login screen, tap "Forgot password?" and enter the email address linked to your account. We'll send you a reset link valid for 30 minutes.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I delete my account?</div>
+        <div class="faq-a">Go to Settings → Account → Delete Account. You'll be asked to confirm your password. Once deleted, your account and all associated data are permanently removed within 30 days. This action cannot be undone.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="contact-band">
+    <h2>Still need help?</h2>
+    <p>Our support team is here Monday to Friday, 9am – 6pm CET.</p>
+    <a href="mailto:support@sapsap.app" class="btn-primary">Email us →</a>
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────── -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <g transform="translate(0,1024) scale(0.1,-0.1)">
+              <path d="M3890 8413 c-171 -22 -378 -86 -524 -161 -661 -340 -805 -1118 -302 -1626 44 -45 149 -138 231 -207 235 -194 302 -272 360 -416 118 -291 -7 -669 -281 -853 -108 -72 -216 -104 -332 -98 -59 3 -102 11 -134 25 -195 88 -255 340 -139 588 67 144 218 303 368 387 29 16 53 33 53 37 0 11 -51 56 -95 83 -101 62 -238 81 -375 54 -168 -34 -306 -112 -432 -244 -302 -317 -312 -785 -21 -1052 175 -160 465 -237 794 -210 63 5 144 15 180 21 l67 12 36 77 c60 129 132 229 245 340 159 158 314 253 536 329 l110 37 34 84 c81 203 93 419 32 600 -77 228 -200 379 -519 633 -193 154 -261 219 -306 291 -130 206 -137 451 -19 666 55 99 179 217 284 269 205 101 418 88 497 -32 24 -37 27 -50 27 -131 0 -82 -3 -98 -32 -159 -18 -37 -55 -92 -84 -122 -103 -109 -217 -158 -358 -154 -98 4 -99 3 -100 -96 -2 -158 124 -268 304 -268 358 0 713 371 732 763 13 265 -109 430 -377 512 -52 16 -100 21 -245 23 -99 2 -196 1 -215 -2z"/>
+              <path d="M7581 7864 c-97 -26 -170 -73 -278 -179 l-101 -100 -20 48 c-31 73 -59 82 -262 82 -227 0 -216 5 -223 -102 -13 -177 -72 -447 -152 -687 -122 -371 -286 -615 -425 -633 -60 -8 -80 19 -80 110 0 155 81 417 266 864 93 223 94 230 32 276 -54 40 -100 50 -212 44 -185 -10 -225 -34 -293 -175 0 -2 -21 12 -47 31 -70 54 -134 72 -251 71 -117 -1 -199 -25 -320 -95 -285 -163 -560 -554 -651 -924 -69 -283 -50 -526 51 -658 133 -174 423 -195 649 -48 70 46 177 152 221 219 l29 44 11 -44 c18 -73 80 -144 150 -174 54 -23 182 -23 260 0 84 25 143 57 239 131 47 35 83 59 81 52 -2 -6 -27 -84 -56 -172 -48 -146 -53 -168 -53 -255 -1 -87 1 -99 27 -143 47 -79 135 -124 263 -134 39 -3 96 -3 127 1 l56 7 5 42 c2 23 9 83 15 132 6 50 27 155 46 234 37 150 124 463 131 470 2 2 25 -17 51 -43 172 -170 462 -163 718 19 83 59 218 203 286 305 110 165 201 382 244 580 26 119 31 300 11 401 -21 104 -81 233 -137 293 -93 102 -265 149 -408 110z m-32 -369 c52 -45 64 -96 58 -247 -12 -309 -161 -634 -359 -783 -151 -113 -284 -87 -296 60 -8 94 136 595 202 703 48 79 158 213 200 245 71 55 145 63 195 22z m-1891 -271 c78 -55 70 -198 -30 -501 -97 -296 -215 -491 -342 -563 -63 -37 -130 -40 -169 -10 -114 90 -22 520 176 824 68 104 175 218 230 245 50 25 104 27 135 5z"/>
+              <path d="M4355 5375 c-438 -70 -799 -360 -917 -735 -20 -65 -23 -95 -23 -230 0 -175 17 -254 79 -378 71 -141 149 -227 371 -411 83 -69 178 -153 212 -189 181 -188 213 -449 87 -708 -102 -208 -285 -335 -489 -337 -62 0 -91 4 -130 22 -176 78 -219 280 -110 516 58 127 190 274 309 346 32 20 55 40 53 49 -4 25 -86 79 -153 100 -81 24 -213 27 -299 5 -354 -90 -605 -485 -531 -835 55 -261 257 -436 573 -496 129 -24 361 -15 501 20 540 136 932 582 932 1061 0 141 -23 236 -89 370 -86 173 -204 302 -473 517 -80 65 -165 139 -187 165 -84 97 -128 231 -118 358 26 301 293 565 572 565 82 0 125 -12 174 -48 121 -90 57 -348 -117 -472 -77 -56 -167 -82 -262 -78 l-75 3 -9 -42 c-12 -59 0 -123 34 -176 103 -163 391 -145 614 39 87 72 147 149 202 259 149 300 94 566 -139 680 -40 19 -99 42 -132 51 -85 23 -343 28 -460 9z"/>
+              <path d="M7758 5081 c-97 -32 -159 -78 -269 -198 l-56 -61 -16 37 c-30 68 -58 76 -258 76 -126 0 -180 -4 -191 -13 -10 -8 -17 -40 -22 -97 -27 -353 -209 -901 -368 -1109 -98 -127 -207 -175 -243 -106 -44 85 22 341 207 805 l100 250 -19 35 c-30 58 -78 75 -208 75 -102 0 -114 -2 -170 -30 -52 -26 -64 -38 -90 -86 l-30 -57 -35 29 c-86 72 -250 91 -383 45 -151 -54 -325 -195 -461 -376 -203 -270 -316 -579 -316 -864 0 -220 60 -335 210 -405 49 -23 67 -26 160 -25 115 1 188 22 285 82 62 38 177 152 217 215 l31 49 13 -37 c20 -60 61 -112 110 -141 38 -23 63 -29 130 -32 135 -7 265 44 395 157 35 30 50 38 46 25 -3 -10 -9 -32 -13 -49 -4 -16 -31 -97 -61 -178 -105 -290 -125 -435 -74 -540 28 -57 91 -107 166 -132 63 -21 179 -30 225 -18 l35 9 7 85 c17 194 42 311 155 720 l76 277 51 -42 c75 -61 146 -88 243 -94 355 -20 715 303 886 794 60 172 80 281 80 434 0 118 -3 145 -25 212 -65 198 -177 287 -368 294 -74 3 -108 0 -152 -15z m2 -349 c52 -52 63 -155 35 -318 -43 -245 -163 -486 -309 -621 -144 -133 -277 -136 -305 -5 -8 41 -5 64 24 177 18 71 58 207 89 300 59 181 97 249 208 378 99 115 198 149 258 89z m-1787 -312 c56 -44 59 -140 11 -325 -96 -371 -255 -634 -410 -681 -57 -17 -87 -10 -118 27 -36 42 -42 106 -23 223 32 186 112 385 222 551 125 187 243 263 318 205z"/>
+            </g>
+          </svg>
+          <span class="nav-logo-text">SapSap</span>
+        </a>
+        <p>Learn any language by exploring the world around you. One snap at a time.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Earn Money</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our story</a></li>
+          <li><a href="#">Use cases</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="#">Language guides</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="support.html">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 SapSap. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
