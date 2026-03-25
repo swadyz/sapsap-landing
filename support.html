@@ -820,10 +820,16 @@
       padding: 28px 24px;
       transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
+      text-decoration: none;
+      display: block;
+      color: inherit;
     }
     .topic-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+    }
+    .faq-item {
+      scroll-margin-top: 90px;
     }
     .topic-icon {
       font-size: 28px;
@@ -942,52 +948,52 @@
   <div class="support-body">
 
     <div class="support-topics">
-      <div class="topic-card">
+      <a href="#faq-free" class="topic-card">
         <span class="topic-icon">🚀</span>
         <h3>Getting started</h3>
         <p>Set up your account, choose your language, and snap your first photo.</p>
-      </div>
-      <div class="topic-card">
+      </a>
+      <a href="#faq-password" class="topic-card">
         <span class="topic-icon">👤</span>
         <h3>Account & profile</h3>
         <p>Manage your username, profile photo, password, and linked accounts.</p>
-      </div>
-      <div class="topic-card">
+      </a>
+      <a href="#faq-snap" class="topic-card">
         <span class="topic-icon">📸</span>
         <h3>Snapping & learning</h3>
         <p>How the camera feature works, AI recognition, and vocabulary lessons.</p>
-      </div>
-      <div class="topic-card">
+      </a>
+      <a href="#faq-languages" class="topic-card">
         <span class="topic-icon">🌍</span>
         <h3>Languages & content</h3>
         <p>Supported languages, switching between them, and managing your word library.</p>
-      </div>
-      <div class="topic-card">
+      </a>
+      <a href="#faq-delete-post" class="topic-card">
         <span class="topic-icon">❤️</span>
         <h3>Community & sharing</h3>
         <p>Posting vocabulary cards, following other learners, and feed settings.</p>
-      </div>
-      <div class="topic-card">
+      </a>
+      <a href="#faq-report" class="topic-card">
         <span class="topic-icon">🔒</span>
         <h3>Privacy & safety</h3>
         <p>Controlling who sees your posts, blocking users, and reporting content.</p>
-      </div>
+      </a>
     </div>
 
     <div class="faq-section">
       <h2>Frequently asked questions</h2>
 
-      <div class="faq-item">
+      <div class="faq-item" id="faq-languages">
         <div class="faq-q">What languages does SapSap support?</div>
-        <div class="faq-a">SapSap currently supports over 40 languages including Spanish, French, German, Japanese, Korean, Mandarin, Portuguese, Italian, Arabic, and many more. We regularly add new languages — check the app for the latest list.</div>
+        <div class="faq-a">SapSap currently supports English, Spanish, and Portuguese. More languages coming soon!</div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="faq-snap">
         <div class="faq-q">How does the Snap feature work?</div>
         <div class="faq-a">Open SapSap and point your camera at any object, sign, or scene around you. Our AI identifies what it sees and instantly shows you the vocabulary in your target language, along with pronunciation and example sentences.</div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="faq-free">
         <div class="faq-q">Is SapSap free to use?</div>
         <div class="faq-a">SapSap has a free tier that gives you access to core features including snapping, basic vocabulary lessons, and community sharing. A premium subscription unlocks unlimited snaps, advanced lessons, offline mode, and more.</div>
       </div>
@@ -997,17 +1003,17 @@
         <div class="faq-a">Yes! You can switch between languages at any time from your profile settings. Your vocabulary library and progress are saved separately for each language.</div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="faq-delete-post">
         <div class="faq-q">How do I delete a post or vocabulary card I've shared?</div>
         <div class="faq-a">Tap the three-dot menu (⋯) on any post in your profile or feed, then select "Delete". The post will be removed immediately from your profile and from the feeds of everyone who follows you.</div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="faq-report">
         <div class="faq-q">How do I report inappropriate content?</div>
         <div class="faq-a">Tap the three-dot menu (⋯) on any post or profile you'd like to report, then select "Report". Choose a reason and submit. Our moderation team reviews all reports within 24 hours.</div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="faq-password">
         <div class="faq-q">I forgot my password — what do I do?</div>
         <div class="faq-a">On the login screen, tap "Forgot password?" and enter the email address linked to your account. We'll send you a reset link valid for 30 minutes.</div>
       </div>
