@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon – SapSap</title>
+  <title>Contact Us – SapSap</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -33,7 +33,6 @@
       flex-direction: column;
     }
 
-    /* ─── NAV ──────────────────────────────────────── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -104,76 +103,107 @@
       transform: translateY(-1px);
     }
 
-    /* ─── 404 HERO ─────────────────────────────────── */
-    .hero-404 {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 140px 48px 80px;
+    /* ─── SUBPAGE HERO ─────────────────────────────── */
+    .subpage-hero {
+      padding: 140px 48px 56px;
       text-align: center;
-    }
-
-    .hero-404-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
       background: var(--section-bg);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 32px;
     }
-
-    .hero-404-icon svg {
-      width: 36px;
-      height: 36px;
-      color: var(--orange);
-    }
-
-    .hero-404 h1 {
+    .subpage-hero h1 {
       font-size: clamp(36px, 5vw, 56px);
       font-weight: 900;
       letter-spacing: -2px;
       color: var(--dark);
-      margin-bottom: 16px;
-      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .subpage-hero p {
+      font-size: 17px;
+      color: var(--light);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
-    .hero-404 h1 em {
-      font-style: normal;
+    /* ─── CONTACT CARDS ────────────────────────────── */
+    .contact-body {
+      flex: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 48px 96px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contact-card {
+      background: var(--section-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+
+    .contact-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .contact-icon--privacy {
+      background: rgba(255,107,53,0.1);
       color: var(--orange);
     }
 
-    .hero-404 p {
-      font-size: 18px;
+    .contact-icon--support {
+      background: rgba(17,17,17,0.06);
+      color: var(--dark);
+    }
+
+    .contact-info h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    .contact-info p {
+      font-size: 15px;
       color: var(--light);
       line-height: 1.7;
-      max-width: 480px;
-      margin-bottom: 40px;
+      margin-bottom: 16px;
     }
 
-    .hero-404 .btn-primary {
+    .contact-info a.email-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--orange);
-      color: #fff;
+      gap: 6px;
       font-size: 15px;
-      font-weight: 700;
-      padding: 14px 28px;
-      border-radius: 30px;
+      font-weight: 600;
+      color: var(--orange);
       text-decoration: none;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 24px rgba(255,107,53,0.4);
+      transition: color 0.2s;
     }
 
-    .hero-404 .btn-primary:hover {
-      background: var(--orange-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(255,107,53,0.5);
+    .contact-info a.email-link:hover {
+      color: var(--orange-dark);
     }
 
     /* ─── FOOTER ───────────────────────────────────── */
@@ -232,15 +262,9 @@
       gap: 16px;
     }
 
-    .footer-bottom p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.3);
-    }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
 
-    .footer-legal {
-      display: flex;
-      gap: 20px;
-    }
+    .footer-legal { display: flex; gap: 20px; }
 
     .footer-legal a {
       font-size: 13px;
@@ -251,24 +275,24 @@
 
     .footer-legal a:hover { color: rgba(255,255,255,0.6); }
 
-    /* ─── RESPONSIVE ────────────────────────────────── */
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
       .nav-links { display: none; }
-      .hero-404 { padding: 120px 24px 60px; }
       footer { padding: 48px 24px 32px; }
       .footer-top { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 700px) {
+      .subpage-hero { padding: 120px 24px 48px; }
+      .contact-body { padding: 48px 24px 72px; }
+      .contact-card { flex-direction: column; padding: 28px 24px; }
     }
 
     @media (max-width: 520px) {
       nav { height: 56px; }
       .nav-inner { padding: 0 16px; }
       .nav-logo svg { width: 40px; height: 40px; }
-      .hero-404 { padding: 100px 16px 48px; }
-      .hero-404-icon { width: 64px; height: 64px; margin-bottom: 24px; }
-      .hero-404-icon svg { width: 28px; height: 28px; }
-      .hero-404 p { font-size: 16px; }
     }
   </style>
 </head>
@@ -300,19 +324,41 @@
     </div>
   </nav>
 
-  <div class="hero-404">
-    <div class="hero-404-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.193-.14 1.743" />
-      </svg>
-    </div>
-
-    <h1>We're <em>building</em> this</h1>
-    <p>This page is still under construction. We're working hard to bring it to you — check back soon.</p>
-    <a href="index.html" class="btn-primary">← Back to home</a>
+  <div class="subpage-hero">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. Reach out using the right channel below and we'll get back to you as soon as we can.</p>
   </div>
 
-  <!-- ─── FOOTER ───────────────────────────────────── -->
+  <div class="contact-body">
+
+    <div class="contact-card">
+      <div class="contact-icon contact-icon--privacy">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+        </svg>
+      </div>
+      <div class="contact-info">
+        <h2>Privacy &amp; Personal Data</h2>
+        <p>For anything related to your privacy, personal data, GDPR requests, or data deletion.</p>
+        <a href="mailto:privacy@sapsap.me" class="email-link">privacy@sapsap.me →</a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon contact-icon--support">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+        </svg>
+      </div>
+      <div class="contact-info">
+        <h2>General Support</h2>
+        <p>For any other questions, bug reports, feedback, or anything else — we're happy to help.</p>
+        <a href="mailto:support@sapsap.me" class="email-link">support@sapsap.me →</a>
+      </div>
+    </div>
+
+  </div>
+
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
