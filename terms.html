@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service – SapSap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B35;
+      --orange-dark: #e85a24;
+      --dark: #111111;
+      --mid: #444444;
+      --light: #888888;
+      --border: #e8e8e8;
+      --bg: #ffffff;
+      --section-bg: #f9f8f6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ──────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 64px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 0 32px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--dark);
+    }
+
+    .nav-logo svg {
+      width: 72px;
+      height: 72px;
+      color: var(--dark);
+    }
+
+    .nav-logo-text {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--mid);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--dark);
+      background: rgba(0,0,0,0.04);
+    }
+
+    .nav-cta {
+      background: var(--orange) !important;
+      color: #fff !important;
+      border-radius: 20px !important;
+      padding: 8px 20px !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      transition: background 0.2s, transform 0.1s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange-dark) !important;
+      transform: translateY(-1px);
+    }
+
+    /* ─── SUBPAGE HERO ─────────────────────────────── */
+    .subpage-hero {
+      padding: 140px 48px 56px;
+      text-align: center;
+      background: var(--section-bg);
+    }
+    .subpage-hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .subpage-hero-meta {
+      font-size: 15px;
+      color: var(--light);
+    }
+
+    /* ─── POLICY BODY ──────────────────────────────── */
+    .policy-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 48px 96px;
+    }
+    .policy-toc {
+      background: var(--section-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .policy-toc h3 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--light);
+      margin-bottom: 16px;
+    }
+    .policy-toc ol {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .policy-toc ol li {
+      font-size: 15px;
+      color: var(--mid);
+    }
+    .policy-toc ol li a {
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .policy-toc ol li a:hover {
+      color: var(--orange);
+    }
+
+    .policy-section {
+      margin-bottom: 48px;
+      scroll-margin-top: 90px;
+    }
+    .policy-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 18px;
+      letter-spacing: -0.5px;
+    }
+    .policy-section p {
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .policy-section ul {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .policy-section ul li {
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+    .policy-section strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 60px 48px 40px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+
+    .footer-brand .nav-logo { margin-bottom: 16px; }
+    .footer-brand .nav-logo svg { color: #fff; }
+    .footer-brand .nav-logo-text { color: #fff; }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      max-width: 220px;
+    }
+
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .footer-col ul li a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      font-weight: 450;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: #fff; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-legal a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ─── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      footer { padding: 48px 24px 32px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 700px) {
+      .subpage-hero { padding: 120px 24px 48px; }
+      .policy-body { padding: 48px 24px 72px; }
+    }
+
+    @media (max-width: 520px) {
+      nav { height: 56px; }
+      .nav-inner { padding: 0 16px; }
+      .nav-logo svg { width: 40px; height: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <g transform="translate(0,1024) scale(0.1,-0.1)">
+          <path d="M3890 8413 c-171 -22 -378 -86 -524 -161 -661 -340 -805 -1118 -302 -1626 44 -45 149 -138 231 -207 235 -194 302 -272 360 -416 118 -291 -7 -669 -281 -853 -108 -72 -216 -104 -332 -98 -59 3 -102 11 -134 25 -195 88 -255 340 -139 588 67 144 218 303 368 387 29 16 53 33 53 37 0 11 -51 56 -95 83 -101 62 -238 81 -375 54 -168 -34 -306 -112 -432 -244 -302 -317 -312 -785 -21 -1052 175 -160 465 -237 794 -210 63 5 144 15 180 21 l67 12 36 77 c60 129 132 229 245 340 159 158 314 253 536 329 l110 37 34 84 c81 203 93 419 32 600 -77 228 -200 379 -519 633 -193 154 -261 219 -306 291 -130 206 -137 451 -19 666 55 99 179 217 284 269 205 101 418 88 497 -32 24 -37 27 -50 27 -131 0 -82 -3 -98 -32 -159 -18 -37 -55 -92 -84 -122 -103 -109 -217 -158 -358 -154 -98 4 -99 3 -100 -96 -2 -158 124 -268 304 -268 358 0 713 371 732 763 13 265 -109 430 -377 512 -52 16 -100 21 -245 23 -99 2 -196 1 -215 -2z"/>
+          <path d="M7581 7864 c-97 -26 -170 -73 -278 -179 l-101 -100 -20 48 c-31 73 -59 82 -262 82 -227 0 -216 5 -223 -102 -13 -177 -72 -447 -152 -687 -122 -371 -286 -615 -425 -633 -60 -8 -80 19 -80 110 0 155 81 417 266 864 93 223 94 230 32 276 -54 40 -100 50 -212 44 -185 -10 -225 -34 -293 -175 0 -2 -21 12 -47 31 -70 54 -134 72 -251 71 -117 -1 -199 -25 -320 -95 -285 -163 -560 -554 -651 -924 -69 -283 -50 -526 51 -658 133 -174 423 -195 649 -48 70 46 177 152 221 219 l29 44 11 -44 c18 -73 80 -144 150 -174 54 -23 182 -23 260 0 84 25 143 57 239 131 47 35 83 59 81 52 -2 -6 -27 -84 -56 -172 -48 -146 -53 -168 -53 -255 -1 -87 1 -99 27 -143 47 -79 135 -124 263 -134 39 -3 96 -3 127 1 l56 7 5 42 c2 23 9 83 15 132 6 50 27 155 46 234 37 150 124 463 131 470 2 2 25 -17 51 -43 172 -170 462 -163 718 19 83 59 218 203 286 305 110 165 201 382 244 580 26 119 31 300 11 401 -21 104 -81 233 -137 293 -93 102 -265 149 -408 110z m-32 -369 c52 -45 64 -96 58 -247 -12 -309 -161 -634 -359 -783 -151 -113 -284 -87 -296 60 -8 94 136 595 202 703 48 79 158 213 200 245 71 55 145 63 195 22z m-1891 -271 c78 -55 70 -198 -30 -501 -97 -296 -215 -491 -342 -563 -63 -37 -130 -40 -169 -10 -114 90 -22 520 176 824 68 104 175 218 230 245 50 25 104 27 135 5z"/>
+          <path d="M4355 5375 c-438 -70 -799 -360 -917 -735 -20 -65 -23 -95 -23 -230 0 -175 17 -254 79 -378 71 -141 149 -227 371 -411 83 -69 178 -153 212 -189 181 -188 213 -449 87 -708 -102 -208 -285 -335 -489 -337 -62 0 -91 4 -130 22 -176 78 -219 280 -110 516 58 127 190 274 309 346 32 20 55 40 53 49 -4 25 -86 79 -153 100 -81 24 -213 27 -299 5 -354 -90 -605 -485 -531 -835 55 -261 257 -436 573 -496 129 -24 361 -15 501 20 540 136 932 582 932 1061 0 141 -23 236 -89 370 -86 173 -204 302 -473 517 -80 65 -165 139 -187 165 -84 97 -128 231 -118 358 26 301 293 565 572 565 82 0 125 -12 174 -48 121 -90 57 -348 -117 -472 -77 -56 -167 -82 -262 -78 l-75 3 -9 -42 c-12 -59 0 -123 34 -176 103 -163 391 -145 614 39 87 72 147 149 202 259 149 300 94 566 -139 680 -40 19 -99 42 -132 51 -85 23 -343 28 -460 9z"/>
+          <path d="M7758 5081 c-97 -32 -159 -78 -269 -198 l-56 -61 -16 37 c-30 68 -58 76 -258 76 -126 0 -180 -4 -191 -13 -10 -8 -17 -40 -22 -97 -27 -353 -209 -901 -368 -1109 -98 -127 -207 -175 -243 -106 -44 85 22 341 207 805 l100 250 -19 35 c-30 58 -78 75 -208 75 -102 0 -114 -2 -170 -30 -52 -26 -64 -38 -90 -86 l-30 -57 -35 29 c-86 72 -250 91 -383 45 -151 -54 -325 -195 -461 -376 -203 -270 -316 -579 -316 -864 0 -220 60 -335 210 -405 49 -23 67 -26 160 -25 115 1 188 22 285 82 62 38 177 152 217 215 l31 49 13 -37 c20 -60 61 -112 110 -141 38 -23 63 -29 130 -32 135 -7 265 44 395 157 35 30 50 38 46 25 -3 -10 -9 -32 -13 -49 -4 -16 -31 -97 -61 -178 -105 -290 -125 -435 -74 -540 28 -57 91 -107 166 -132 63 -21 179 -30 225 -18 l35 9 7 85 c17 194 42 311 155 720 l76 277 51 -42 c75 -61 146 -88 243 -94 355 -20 715 303 886 794 60 172 80 281 80 434 0 118 -3 145 -25 212 -65 198 -177 287 -368 294 -74 3 -108 0 -152 -15z m2 -349 c52 -52 63 -155 35 -318 -43 -245 -163 -486 -309 -621 -144 -133 -277 -136 -305 -5 -8 41 -5 64 24 177 18 71 58 207 89 300 59 181 97 249 208 378 99 115 198 149 258 89z m-1787 -312 c56 -44 59 -140 11 -325 -96 -371 -255 -634 -410 -681 -57 -17 -87 -10 -118 27 -36 42 -42 106 -23 223 32 186 112 385 222 551 125 187 243 263 318 205z"/>
+        </g>
+      </svg>
+      <span class="nav-logo-text">SapSap</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#">Your story</a></li>
+      <li><a href="#">Use cases</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Earn Money</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="#" class="nav-cta">Try for free →</a></li>
+    </ul>
+    </div>
+  </nav>
+
+  <div class="subpage-hero">
+    <h1>Terms of Service</h1>
+    <p class="subpage-hero-meta">Last updated: 29 March 2026</p>
+  </div>
+
+  <div class="policy-body">
+
+    <div class="policy-toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#use-of-service">Use of the Service</a></li>
+        <li><a href="#user-content">User Content</a></li>
+        <li><a href="#responsibility">Responsibility for Content</a></li>
+        <li><a href="#ai-processing">AI Processing</a></li>
+        <li><a href="#community-guidelines">Community Guidelines</a></li>
+        <li><a href="#reporting">Reporting and Removal</a></li>
+        <li><a href="#termination">Account Termination</a></li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+        <li><a href="#liability">Limitation of Liability</a></li>
+        <li><a href="#changes">Changes to the Terms</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+
+    <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:48px;">
+      Welcome to SapSap. These Terms of Service ("Terms") govern your use of our mobile application and related services (the "Service"). By using the Service, you agree to these Terms.
+    </p>
+
+    <div class="policy-section" id="use-of-service">
+      <h2>1. Use of the Service</h2>
+      <p>You must be at least 13 years old (or the minimum legal age in your country) to use the Service.</p>
+      <p>You agree to use the Service only for lawful purposes and in accordance with these Terms.</p>
+    </div>
+
+    <div class="policy-section" id="user-content">
+      <h2>2. User Content</h2>
+      <p>You may upload photos, text, and other content ("User Content") to the Service.</p>
+      <p>You retain ownership of your User Content. However, by uploading content, you grant us a non-exclusive, worldwide, royalty-free license to use, display, and distribute your content within the Service.</p>
+    </div>
+
+    <div class="policy-section" id="responsibility">
+      <h2>3. Responsibility for Content</h2>
+      <p>You are solely responsible for the content you upload.</p>
+      <p>You agree that:</p>
+      <ul>
+        <li>You have the right to share any content you upload</li>
+        <li>Your content does not violate any laws or rights of others</li>
+        <li>If your content includes other people, you have permission to share it</li>
+      </ul>
+      <p>We do not pre-screen all content but reserve the right to remove any content at our discretion.</p>
+    </div>
+
+    <div class="policy-section" id="ai-processing">
+      <h2>4. AI Processing</h2>
+      <p>Our Service uses automated systems to analyze images and generate language-related suggestions.</p>
+      <p>By using the Service and uploading content, you agree that your content may be processed by such systems.</p>
+    </div>
+
+    <div class="policy-section" id="community-guidelines">
+      <h2>5. Community Guidelines</h2>
+      <p>You agree not to upload content that:</p>
+      <ul>
+        <li>Is illegal, harmful, or abusive</li>
+        <li>Violates privacy or personal rights</li>
+        <li>Contains hate speech or harassment</li>
+        <li>Infringes intellectual property rights</li>
+      </ul>
+      <p>We may suspend or terminate accounts that violate these rules.</p>
+    </div>
+
+    <div class="policy-section" id="reporting">
+      <h2>6. Reporting and Removal</h2>
+      <p>If you believe content violates your rights, you may report it to us at: <a href="mailto:support@sapsap.me" style="color:var(--orange);">support@sapsap.me</a></p>
+      <p>We will review and, if appropriate, remove the content.</p>
+    </div>
+
+    <div class="policy-section" id="termination">
+      <h2>7. Account Termination</h2>
+      <p>You may delete your account at any time.</p>
+      <p>We may suspend or terminate your account if you violate these Terms.</p>
+    </div>
+
+    <div class="policy-section" id="disclaimer">
+      <h2>8. Disclaimer</h2>
+      <p>The Service is provided "as is" without warranties of any kind.</p>
+      <p>We do not guarantee that the Service will be uninterrupted or error-free.</p>
+    </div>
+
+    <div class="policy-section" id="liability">
+      <h2>9. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, we are not liable for any indirect, incidental, or consequential damages arising from your use of the Service.</p>
+    </div>
+
+    <div class="policy-section" id="changes">
+      <h2>10. Changes to the Terms</h2>
+      <p>We may update these Terms from time to time. Continued use of the Service means you accept the updated Terms.</p>
+    </div>
+
+    <div class="policy-section" id="contact">
+      <h2>11. Contact</h2>
+      <p>If you have any questions, contact us at: <a href="mailto:support@sapsap.me" style="color:var(--orange);">support@sapsap.me</a></p>
+    </div>
+
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────── -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <g transform="translate(0,1024) scale(0.1,-0.1)">
+              <path d="M3890 8413 c-171 -22 -378 -86 -524 -161 -661 -340 -805 -1118 -302 -1626 44 -45 149 -138 231 -207 235 -194 302 -272 360 -416 118 -291 -7 -669 -281 -853 -108 -72 -216 -104 -332 -98 -59 3 -102 11 -134 25 -195 88 -255 340 -139 588 67 144 218 303 368 387 29 16 53 33 53 37 0 11 -51 56 -95 83 -101 62 -238 81 -375 54 -168 -34 -306 -112 -432 -244 -302 -317 -312 -785 -21 -1052 175 -160 465 -237 794 -210 63 5 144 15 180 21 l67 12 36 77 c60 129 132 229 245 340 159 158 314 253 536 329 l110 37 34 84 c81 203 93 419 32 600 -77 228 -200 379 -519 633 -193 154 -261 219 -306 291 -130 206 -137 451 -19 666 55 99 179 217 284 269 205 101 418 88 497 -32 24 -37 27 -50 27 -131 0 -82 -3 -98 -32 -159 -18 -37 -55 -92 -84 -122 -103 -109 -217 -158 -358 -154 -98 4 -99 3 -100 -96 -2 -158 124 -268 304 -268 358 0 713 371 732 763 13 265 -109 430 -377 512 -52 16 -100 21 -245 23 -99 2 -196 1 -215 -2z"/>
+              <path d="M7581 7864 c-97 -26 -170 -73 -278 -179 l-101 -100 -20 48 c-31 73 -59 82 -262 82 -227 0 -216 5 -223 -102 -13 -177 -72 -447 -152 -687 -122 -371 -286 -615 -425 -633 -60 -8 -80 19 -80 110 0 155 81 417 266 864 93 223 94 230 32 276 -54 40 -100 50 -212 44 -185 -10 -225 -34 -293 -175 0 -2 -21 12 -47 31 -70 54 -134 72 -251 71 -117 -1 -199 -25 -320 -95 -285 -163 -560 -554 -651 -924 -69 -283 -50 -526 51 -658 133 -174 423 -195 649 -48 70 46 177 152 221 219 l29 44 11 -44 c18 -73 80 -144 150 -174 54 -23 182 -23 260 0 84 25 143 57 239 131 47 35 83 59 81 52 -2 -6 -27 -84 -56 -172 -48 -146 -53 -168 -53 -255 -1 -87 1 -99 27 -143 47 -79 135 -124 263 -134 39 -3 96 -3 127 1 l56 7 5 42 c2 23 9 83 15 132 6 50 27 155 46 234 37 150 124 463 131 470 2 2 25 -17 51 -43 172 -170 462 -163 718 19 83 59 218 203 286 305 110 165 201 382 244 580 26 119 31 300 11 401 -21 104 -81 233 -137 293 -93 102 -265 149 -408 110z m-32 -369 c52 -45 64 -96 58 -247 -12 -309 -161 -634 -359 -783 -151 -113 -284 -87 -296 60 -8 94 136 595 202 703 48 79 158 213 200 245 71 55 145 63 195 22z m-1891 -271 c78 -55 70 -198 -30 -501 -97 -296 -215 -491 -342 -563 -63 -37 -130 -40 -169 -10 -114 90 -22 520 176 824 68 104 175 218 230 245 50 25 104 27 135 5z"/>
+              <path d="M4355 5375 c-438 -70 -799 -360 -917 -735 -20 -65 -23 -95 -23 -230 0 -175 17 -254 79 -378 71 -141 149 -227 371 -411 83 -69 178 -153 212 -189 181 -188 213 -449 87 -708 -102 -208 -285 -335 -489 -337 -62 0 -91 4 -130 22 -176 78 -219 280 -110 516 58 127 190 274 309 346 32 20 55 40 53 49 -4 25 -86 79 -153 100 -81 24 -213 27 -299 5 -354 -90 -605 -485 -531 -835 55 -261 257 -436 573 -496 129 -24 361 -15 501 20 540 136 932 582 932 1061 0 141 -23 236 -89 370 -86 173 -204 302 -473 517 -80 65 -165 139 -187 165 -84 97 -128 231 -118 358 26 301 293 565 572 565 82 0 125 -12 174 -48 121 -90 57 -348 -117 -472 -77 -56 -167 -82 -262 -78 l-75 3 -9 -42 c-12 -59 0 -123 34 -176 103 -163 391 -145 614 39 87 72 147 149 202 259 149 300 94 566 -139 680 -40 19 -99 42 -132 51 -85 23 -343 28 -460 9z"/>
+              <path d="M7758 5081 c-97 -32 -159 -78 -269 -198 l-56 -61 -16 37 c-30 68 -58 76 -258 76 -126 0 -180 -4 -191 -13 -10 -8 -17 -40 -22 -97 -27 -353 -209 -901 -368 -1109 -98 -127 -207 -175 -243 -106 -44 85 22 341 207 805 l100 250 -19 35 c-30 58 -78 75 -208 75 -102 0 -114 -2 -170 -30 -52 -26 -64 -38 -90 -86 l-30 -57 -35 29 c-86 72 -250 91 -383 45 -151 -54 -325 -195 -461 -376 -203 -270 -316 -579 -316 -864 0 -220 60 -335 210 -405 49 -23 67 -26 160 -25 115 1 188 22 285 82 62 38 177 152 217 215 l31 49 13 -37 c20 -60 61 -112 110 -141 38 -23 63 -29 130 -32 135 -7 265 44 395 157 35 30 50 38 46 25 -3 -10 -9 -32 -13 -49 -4 -16 -31 -97 -61 -178 -105 -290 -125 -435 -74 -540 28 -57 91 -107 166 -132 63 -21 179 -30 225 -18 l35 9 7 85 c17 194 42 311 155 720 l76 277 51 -42 c75 -61 146 -88 243 -94 355 -20 715 303 886 794 60 172 80 281 80 434 0 118 -3 145 -25 212 -65 198 -177 287 -368 294 -74 3 -108 0 -152 -15z m2 -349 c52 -52 63 -155 35 -318 -43 -245 -163 -486 -309 -621 -144 -133 -277 -136 -305 -5 -8 41 -5 64 24 177 18 71 58 207 89 300 59 181 97 249 208 378 99 115 198 149 258 89z m-1787 -312 c56 -44 59 -140 11 -325 -96 -371 -255 -634 -410 -681 -57 -17 -87 -10 -118 27 -36 42 -42 106 -23 223 32 186 112 385 222 551 125 187 243 263 318 205z"/>
+            </g>
+          </svg>
+          <span class="nav-logo-text">SapSap</span>
+        </a>
+        <p>Learn any language by exploring the world around you. One snap at a time.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Earn Money</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our story</a></li>
+          <li><a href="#">Use cases</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="#">Language guides</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="support.html">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SapSap. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (history.scrollRestoration) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  </script>
+
+</body>
+</html>
