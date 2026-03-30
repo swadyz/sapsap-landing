@@ -1,0 +1,103 @@
+Update the existing Privacy Policy by keeping its current structure and sections (1–9), and apply the following changes and additions.
+
+Do NOT rewrite the entire document. Only extend and refine the existing sections as described below.
+
+⸻
+
+1. Section: “Information We Collect”
+
+After the paragraph describing camera/photo data, ADD:
+
+“We collect and process photos and images that you choose to upload. These images may include objects, environments, or other people. You are responsible for the content you upload and for ensuring that you have the necessary rights to share such content.
+
+Photos may contain personal data, including identifiable individuals. We do not require users to upload photos of themselves, and users control what content they choose to share.”
+
+⸻
+
+2. Section: “How We Use Your Information”
+
+Within this section, ADD a paragraph explaining AI processing:
+
+“We use automated systems, including machine learning and AI-based tools, to analyze images you upload in order to generate language-related suggestions, such as relevant vocabulary and phrases. This processing is necessary to provide the core functionality of the Service.”
+
+Also ADD:
+
+“We do not use your photos or other user content to train machine learning models without your explicit consent.”
+
+If not already stated clearly, ADD:
+
+“We may use third-party service providers to support image processing and application functionality. These providers process data on our behalf and under appropriate safeguards.”
+
+⸻
+
+3. Section: “How We Share Your Information”
+
+In the subsection related to sharing with other users, EXTEND it with:
+
+“If you choose to share content publicly or with other users, your content (including photos and associated information) will be visible to others within the Service.
+
+You should only upload and share content that you have the right to share. We provide mechanisms for users to report content that may violate their rights or applicable laws. We may review and remove content where appropriate.”
+
+⸻
+
+4. NEW SECTION (insert after “How We Share Your Information”)
+
+Add a new section titled:
+
+“Legal Bases for Processing (EEA, UK, and Switzerland)”
+
+Content:
+
+“If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, we process your personal data based on the following legal grounds:
+	•	Performance of a contract: to provide and operate the Service, including account creation, content sharing, and core application features.
+	•	Legitimate interests: to ensure the security of the Service, prevent fraud and abuse, and improve functionality.
+	•	Consent: where required, for example for optional features or specific types of data processing.
+	•	Legal obligations: where processing is necessary to comply with applicable laws.”
+
+⸻
+
+5. Section: “Your Choices and Controls”
+
+EXTEND the existing GDPR-related paragraph by adding:
+
+“Depending on your location, you may also have the right to request correction of inaccurate data, restriction of processing, or to object to certain types of processing.
+
+You may exercise your rights by using the features available in the application or by contacting us at the email address provided below. We will respond to such requests in accordance with applicable law.”
+
+⸻
+
+6. Section: “Data Retention”
+
+EXTEND with:
+
+“We retain user-generated content, such as photos, posts, and comments, for as long as your account is active or as necessary to provide the Service.
+
+If you delete your account, your content will be deleted or anonymized within a reasonable period, except where retention is required for legal, security, or operational purposes.
+
+Backup copies may be retained for a limited period before being permanently deleted.”
+
+⸻
+
+7. NEW SECTION (insert after “Data Retention”)
+
+Add a new section titled:
+
+“International Data Transfers”
+
+Content:
+
+“We may process and store your information in countries outside of your own, including the United States.
+
+Where required by applicable law, we implement appropriate safeguards to protect your personal data, such as standard contractual clauses or other lawful transfer mechanisms.
+
+You may contact us for more information about how we transfer and protect your data.”
+
+⸻
+
+8. No changes required
+
+Sections such as “Security” and “Children’s Privacy” can remain as they are, unless additional clarification is needed.
+
+⸻
+
+Ensure the final document remains clear, concise, and consistent in tone with the existing policy. Do not introduce unnecessary legal jargon.
